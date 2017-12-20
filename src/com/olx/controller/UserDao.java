@@ -34,9 +34,10 @@ public UserDao(){
 		Set<UserDtoRes> users = new HashSet<UserDtoRes>();
 		try {
 			UserDtoRes user = new UserDtoRes();
-			User userr = new User();
+			
 			rs = stmt.executeQuery("select * from user");
 			while(rs.next()){
+				User userr = new User();
 				userr.setId(rs.getInt(1));
 				userr.setName(rs.getString(2));
 				userr.setPassword(rs.getString(3));
@@ -63,10 +64,11 @@ public UserDao(){
 		Set<ProductDtoRes> products = new HashSet<ProductDtoRes>();
 		try {
 			
-			Product product = new Product();
+			
 			ProductDtoRes productt = new ProductDtoRes();
 			rs = stmt.executeQuery("select product.id,product.name,price,date,desc from user , product where user.id=product.user_id and user.name = '"+user.getName()+"'");
 			while(rs.next()){
+				Product product = new Product();
 				product.setId(rs.getInt(1));
 				product.setName(rs.getString(2));
 				product.setPrice(rs.getDouble(3));
@@ -114,10 +116,11 @@ public UserDao(){
 		ResultSet rs;
 		UserDtoRes userr = new UserDtoRes();
 		try {
-			User user = new User();
+			
 			rs = stmt.executeQuery("select name,password,city,address,phone,email from user where user.name = '"+name+"'");
 			
 			while(rs.next()){
+				User user = new User();
 				user.setName(rs.getString(1));
 				user.setPassword(rs.getString(2));
 				user.setCity(rs.getString(3));

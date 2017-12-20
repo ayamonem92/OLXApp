@@ -73,7 +73,7 @@ public class Login {
 				 else{
 					 JOptionPane.showMessageDialog(frame,resultMessage);
 					 try {
-							Main window = new Main();
+							Main window = new Main(username);
 							window.setVisible(true);
 						} catch (Exception e1) {
 							e1.printStackTrace();

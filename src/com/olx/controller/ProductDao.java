@@ -24,10 +24,10 @@ public class ProductDao implements IProductDao{
 		Set<ProductDtoRes> products = new HashSet<ProductDtoRes>();
 		try {
 			ProductDtoRes productt = new ProductDtoRes();
-			Product product = new Product();
+			
 			rs = stmt.executeQuery("select product.id,product.name,product.date,price,descreption,user.name,product.image,product.status,category.name from product,user,category where user.id=product.user_id and product.categ_id=category.id");
 			while(rs.next()){
-				
+				Product product = new Product();
 				product.setId(rs.getInt(1));
 				product.setName(rs.getString(2));
 				product.setDate(rs.getDate(3));
@@ -56,10 +56,10 @@ public class ProductDao implements IProductDao{
 		Set<ProductDtoRes> products = new HashSet<ProductDtoRes>();
 		try {
 			ProductDtoRes productt = new ProductDtoRes();
-			Product product = new Product();
+			
 			rs = stmt.executeQuery("select product.id,product.name,product.date,price,descreption,user.name,product.image,product.status,category.name from product,user,category where user.id=product.user_id and product.categ_id=category.id and categ_id="+category.getId());
 			while(rs.next()){
-				
+				Product product = new Product();
 				product.setId(rs.getInt(1));
 				product.setName(rs.getString(2));
 				product.setDate(rs.getDate(3));
@@ -88,10 +88,10 @@ public class ProductDao implements IProductDao{
 		Set<ProductDtoRes> products = new HashSet<ProductDtoRes>();
 		try {
 			ProductDtoRes productt = new ProductDtoRes();
-			Product product = new Product();
+			
 			rs = stmt.executeQuery("select product.id,product.name,product.date,price,descreption,user.name,product.image,product.status,category.name from product,user,category where user.id=product.user_id and product.categ_id=category.id and user.name='"+user.getName()+"'");
 			while(rs.next()){
-				
+				Product product = new Product();
 				product.setId(rs.getInt(1));
 				product.setName(rs.getString(2));
 				product.setDate(rs.getDate(3));
@@ -143,11 +143,11 @@ public class ProductDao implements IProductDao{
 	public ProductDtoRes find(int id) {
 		ResultSet rs;
 		ProductDtoRes productt = new ProductDtoRes();
-		Product product = new Product();
+		
 		try{
 		rs = stmt.executeQuery("select product.id,product.name,product.date,price,descreption,user.name,product.image,product.status,category.name from product,user,category where user.id=product.user_id and product.categ_id=category.id and product.id="+id);
 		while(rs.next()){
-			
+			Product product = new Product();
 			product.setId(rs.getInt(1));
 			product.setName(rs.getString(2));
 			product.setDate(rs.getDate(3));
