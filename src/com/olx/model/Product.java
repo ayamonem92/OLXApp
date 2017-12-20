@@ -5,13 +5,26 @@ import java.util.Date;
 public class Product {
 	private int id;
 	private String name;
-	private Date date;
+	private String date;
 	private double price;
 	private Category category;
 	private String descreption;
 	private User user;
 	private String image;
 	private String status;
+	public Product( String name, String date, double price, String descreption,
+			String image, String status) {
+		this.name = name;
+		this.date = date;
+		this.price = price;
+		
+		this.descreption = descreption;
+		
+		this.image = image;
+		this.status = status;
+	}
+	public Product( ){}
+	
 	public int getId() {
 		return id;
 	}
@@ -24,10 +37,10 @@ public class Product {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Date getDate() {
+	public String  getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	public double getPrice() {

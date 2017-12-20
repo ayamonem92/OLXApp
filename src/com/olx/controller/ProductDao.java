@@ -30,7 +30,7 @@ public class ProductDao implements IProductDao{
 				Product product = new Product();
 				product.setId(rs.getInt(1));
 				product.setName(rs.getString(2));
-				product.setDate(rs.getDate(3));
+				product.setDate(rs.getString(3));
 				product.setPrice(rs.getDouble(4));
 				product.setDescreption(rs.getString(5));
 				product.setUser(new User(rs.getString(6)));
@@ -62,7 +62,7 @@ public class ProductDao implements IProductDao{
 				Product product = new Product();
 				product.setId(rs.getInt(1));
 				product.setName(rs.getString(2));
-				product.setDate(rs.getDate(3));
+				product.setDate(rs.getString(3));
 				product.setPrice(rs.getDouble(4));
 				product.setDescreption(rs.getString(5));
 				product.setUser(new User(rs.getString(6)));
@@ -94,7 +94,7 @@ public class ProductDao implements IProductDao{
 				Product product = new Product();
 				product.setId(rs.getInt(1));
 				product.setName(rs.getString(2));
-				product.setDate(rs.getDate(3));
+				product.setDate(rs.getString(3));
 				product.setPrice(rs.getDouble(4));
 				product.setDescreption(rs.getString(5));
 				product.setUser(new User(rs.getString(6)));
@@ -150,7 +150,7 @@ public class ProductDao implements IProductDao{
 			Product product = new Product();
 			product.setId(rs.getInt(1));
 			product.setName(rs.getString(2));
-			product.setDate(rs.getDate(3));
+			product.setDate(rs.getString(3));
 			product.setPrice(rs.getDouble(4));
 			product.setDescreption(rs.getString(5));
 			product.setUser(new User(rs.getString(6)));

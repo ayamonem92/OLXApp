@@ -48,7 +48,6 @@ public void initialize(){
     			}
     		));
      table.setCellSelectionEnabled(true);
-     table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
      for(Category categ : categories){
     	 row = new Vector(1);
          row.add(categ.getName());
