@@ -44,12 +44,13 @@ public void initialize(){
     			new Object[][] {
     			},
     			new String[] {
-    				"Category Name"
+    				"Category id","Category Name"
     			}
     		));
      table.setCellSelectionEnabled(true);
      for(Category categ : categories){
-    	 row = new Vector(1);
+    	 row = new Vector(2);
+         row.add(categ.getId());
          row.add(categ.getName());
          ((DefaultTableModel)table.getModel()).addRow(row);
      }
@@ -61,17 +62,12 @@ public void initialize(){
        public void valueChanged(ListSelectionEvent e) {
          String selectedData = null;
 
-         int[] selectedRow = table.getSelectedRows();
-         int[] selectedColumns = table.getSelectedColumns();
-
-         for (int i = 0; i < selectedRow.length; i++) {
-           for (int j = 0; j < selectedColumns.length; j++) {
-             selectedData = (String) table.getValueAt(selectedRow[i], selectedColumns[j]);
-           }
-         }
+      
+             selectedData = table.getValueAt(table.getSelectedRow(), 0).toString();
+          
          //System.out.println("Selected: " + selectedData);
          try {
-        	 Products window = new Products(selectedData);
+        	 Products window = new Products(Integer.parseInt(selectedData));
 				window.setVisible(true);
 			} catch (Exception e1) {
 				e1.printStackTrace();

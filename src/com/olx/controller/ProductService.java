@@ -1,5 +1,9 @@
 package com.olx.controller;
 
+import java.util.Set;
+
+import com.olx.model.Category;
+import com.olx.model.CategoryDtoReq;
 import com.olx.model.Product;
 import com.olx.model.UserDtoReq;
 import com.olx.model.UserDtoRes;
@@ -21,7 +25,10 @@ public class ProductService {
 
 	
 	
-	
+	public Set<Product> ListOfProducts(CategoryDtoReq categ){
+		Set<Product> products = productController.ListOfProducts(categ);
+		return products;
+	}
 
 	public boolean AddProduct(Product product){
 

@@ -18,8 +18,8 @@ CREATE TABLE IF NOT EXISTS `Category` (
 
 CREATE TABLE `Product` (
   `id` int auto_increment primary key,
-  `name` int ,
-  `date` datetime ,
+  `name` varchar(100) ,
+  `date` varchar(10) ,
   `price` double,
   `categ_id` int,
   `descreption` varchar(300),
@@ -33,3 +33,8 @@ insert into `Category` (name) values('Clothes');
 insert into `Category` (name) values('Phones&Accessories');
 insert into `Category` (name) values('Bag&shoes');
 insert into `Category` (name) values('Car');
+insert into `User` (name,password,email,phone,address,city) values('aya','aya','aya@gmail.com',232323,'Giza','Giza');
+insert into `Product` (name,date,price,categ_id,descreption,user_id,image,status) values('Iphone','2017/12/21',10000,2,'New Iphone',1,'','new');
+insert into `Product` (name,date,price,categ_id,descreption,user_id,image,status) values('Dress','2017/12/21',10000,1,'New Dress',1,'','new');
+insert into `Product` (name,date,price,categ_id,descreption,user_id,image,status) values('Bag','2017/12/21',10000,3,'New Bag',1,'','new');
+insert into `Product` (name,date,price,categ_id,descreption,user_id,image,status) values('Car','2017/12/21',10000,4,'New Car',1,'','new');

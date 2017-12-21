@@ -72,7 +72,7 @@ public UserDao(){
 				product.setId(rs.getInt(1));
 				product.setName(rs.getString(2));
 				product.setPrice(rs.getDouble(3));
-				product.setDate(rs.getDate(4));
+				product.setDate(rs.getString(4));
 				product.setDescreption(rs.getString(5));
 				productt.setProduct(product);
 				productt.setResult(true);

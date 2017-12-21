@@ -1,6 +1,7 @@
 package com.olx.controller;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -18,6 +19,19 @@ import com.olx.model.UserDtoReq;
 public class ProductDao implements IProductDao{
 	public Connection con;
 	private Statement stmt;
+	public ProductDao(){
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			con =DriverManager.getConnection("jdbc:mysql://localhost:3306/OLX","root","1234");
+		
+			stmt= con.createStatement();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Error in connection with db");
+			e.printStackTrace();
+		}
+	}
 	@Override
 	public Set<ProductDtoRes> findAll() {
 		ResultSet rs;

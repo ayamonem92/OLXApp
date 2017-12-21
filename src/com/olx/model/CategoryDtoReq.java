@@ -4,6 +4,11 @@ public class CategoryDtoReq {
 	private int id;
 	private String name;
 
+	public CategoryDtoReq(int id) {
+		// TODO Auto-generated constructor stub
+		this.id =id;
+	}
+
 	public int getId() {
 		return id;
 	}
