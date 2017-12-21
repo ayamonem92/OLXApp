@@ -25,6 +25,12 @@ public class User {
 	public User(String name){
 		this.name=name;
 	}
+	public User(String name,String address,String city,int phone){
+		this.name=name;
+		this.phone=phone;
+		this.city=city;
+		this.address=address;
+	}
 	public int getId() {
 		return id;
 	}

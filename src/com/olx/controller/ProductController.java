@@ -1,5 +1,7 @@
 package com.olx.controller;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -43,7 +45,11 @@ public class ProductController  {
         }}
     
     
-        
+    public ProductDtoRes getProductById(int id) {
+		ProductDtoRes product = new ProductDtoRes();
+		product=productDao.find(id);
+		return product;
+	} 
     public Set<Product> ListOfProducts(CategoryDtoReq category){
 		Set<Product> productss =new HashSet<Product>();
 		

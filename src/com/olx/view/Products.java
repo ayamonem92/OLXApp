@@ -11,6 +11,8 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 import com.olx.controller.ProductService;
@@ -40,6 +42,7 @@ public class Products extends JFrame {
 				new Object[][] {
 				},
 				new String[] {
+						"Product ID",
 					"Product Name"
 				}
 			));
@@ -48,16 +51,35 @@ public class Products extends JFrame {
 		     Vector row = null;
 		     table.setCellSelectionEnabled(true);
 		     for(Product product : products){
-		    	 row = new Vector(1);
+		    	 row = new Vector(2);
+		    	 row.add(product.getId());
 		         row.add(product.getName());
 		         ((DefaultTableModel)table.getModel()).addRow(row);
 		     }
 				table.setCellSelectionEnabled(true);
-				table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-				scrollPane.setViewportView(table);
 				
-		  
-	}
+				ListSelectionModel cellSelectionModel = table.getSelectionModel();
+			     cellSelectionModel.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+			     cellSelectionModel.addListSelectionListener(new ListSelectionListener() {
+			       public void valueChanged(ListSelectionEvent e) {
+			         String selectedData = null;
+
+			      
+			             selectedData = table.getValueAt(table.getSelectedRow(), 0).toString();
+			          
+			         //System.out.println("Selected: " + selectedData);
+			         try {
+			        	 ShowProduct window = new ShowProduct(Integer.parseInt(selectedData));
+							window.setVisible(true);
+						} catch (Exception e1) {
+							e1.printStackTrace();
+						}
+			       }
+
+			     });
+				scrollPane.setViewportView(table);
+			}
 
 	public void initilize() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -70,3 +92,4 @@ public class Products extends JFrame {
 	
 
 }
+	

@@ -43,7 +43,7 @@ public class Product {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	public double getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 	public void setPrice(double price) {

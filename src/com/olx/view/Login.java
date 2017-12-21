@@ -53,11 +53,11 @@ public class Login {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("User Name: ");
-		lblNewLabel.setBounds(10, 57, 73, 14);
+		lblNewLabel.setBounds(10, 57, 102, 14);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Password");
-		lblNewLabel_1.setBounds(10, 103, 46, 14);
+		lblNewLabel_1.setBounds(10, 103, 102, 14);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JButton btnLogin = new JButton("Login");
@@ -86,12 +86,12 @@ public class Login {
 		frame.getContentPane().add(btnLogin);
 		
 		textName = new JTextField();
-		textName.setBounds(82, 54, 86, 20);
+		textName.setBounds(122, 57, 86, 20);
 		frame.getContentPane().add(textName);
 		textName.setColumns(10);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(82, 100, 85, 20);
+		passwordField.setBounds(122, 103, 85, 20);
 		frame.getContentPane().add(passwordField);
 		
 		JButton btnRegister = new JButton("Register");

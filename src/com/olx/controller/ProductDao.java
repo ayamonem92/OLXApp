@@ -159,7 +159,7 @@ public class ProductDao implements IProductDao{
 		ProductDtoRes productt = new ProductDtoRes();
 		
 		try{
-		rs = stmt.executeQuery("select product.id,product.name,product.date,price,descreption,user.name,product.image,product.status,category.name from product,user,category where user.id=product.user_id and product.categ_id=category.id and product.id="+id);
+		rs = stmt.executeQuery("select product.id,product.name,product.date,price,descreption,user.name,product.image,product.status,category.name,user.address,user.city,user.phone from product,user,category where user.id=product.user_id and product.categ_id=category.id and product.id="+id);
 		while(rs.next()){
 			Product product = new Product();
 			product.setId(rs.getInt(1));
@@ -167,7 +167,7 @@ public class ProductDao implements IProductDao{
 			product.setDate(rs.getString(3));
 			product.setPrice(rs.getDouble(4));
 			product.setDescreption(rs.getString(5));
-			product.setUser(new User(rs.getString(6)));
+			product.setUser(new User(rs.getString(6),rs.getString(10),rs.getString(11),rs.getInt(12)));
 			product.setImage(rs.getString(7));
 			product.setStatus(rs.getString(8));
 			product.setCategory(new Category(rs.getString(9)));
