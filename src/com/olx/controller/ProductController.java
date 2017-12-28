@@ -24,25 +24,18 @@ public class ProductController  {
 	private ProductDao productDao;
 	private UserDao userDao;
    
-
-    User userr;
     public boolean addproduct(Product product) {
     	
     	
     	
     	
-    	Set<ProductDtoRes> ProductRes =  productDao.findAllProducts(new UserDtoReq(userr.getName(),userr.getPassword()));
-    			
-        if(((ProductDtoRes) ProductRes).isResult()){
-            //if product already exists
-            return false;
-        }else{
+    	//Set<ProductDtoRes> ProductRes =  productDao.findAllProducts(new UserDtoReq(product.getUser().getName(),product.getUser().getPassword()));
         	
 			productDao.create(product);
             return true;
           
       
-        }}
+        }
     
     
     public ProductDtoRes getProductById(int id) {

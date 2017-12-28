@@ -117,16 +117,17 @@ public UserDao(){
 		UserDtoRes userr = new UserDtoRes();
 		try {
 			
-			rs = stmt.executeQuery("select name,password,city,address,phone,email from user where user.name = '"+name+"'");
+			rs = stmt.executeQuery("select id,name,password,city,address,phone,email from user where user.name = '"+name+"'");
 			
 			while(rs.next()){
 				User user = new User();
-				user.setName(rs.getString(1));
-				user.setPassword(rs.getString(2));
-				user.setCity(rs.getString(3));
-				user.setAddress(rs.getString(4));
-				user.setPhone(rs.getInt(5));
-				user.setEmail(rs.getString(6));
+				user.setId(rs.getInt(1));
+				user.setName(rs.getString(2));
+				user.setPassword(rs.getString(3));
+				user.setCity(rs.getString(4));
+				user.setAddress(rs.getString(5));
+				user.setPhone(rs.getInt(6));
+				user.setEmail(rs.getString(7));
 				userr.setUser(user);
 				userr.setResult(true);
 				}

@@ -30,6 +30,29 @@ public class CategoryDao implements ICategoryDao{
 		}
 	}
 	@Override
+	public CategoryDtoRes find(String name) {
+		ResultSet rs;
+		CategoryDtoRes catt = new CategoryDtoRes();
+		try {
+			
+			rs = stmt.executeQuery("select id,name from Category where category.name = '"+name+"'");
+			
+			while(rs.next()){
+				Category cat = new Category();
+				cat.setId(rs.getInt(1));
+				cat.setName(rs.getString(2));
+			
+				catt.setCategory(cat);
+				catt.setResult(true);
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		return catt;
+	}
+	@Override
 	public Set<CategoryDtoRes> findAll() {
 		ResultSet rs;
 		Set<CategoryDtoRes> categories = new HashSet<CategoryDtoRes>();

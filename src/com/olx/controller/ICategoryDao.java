@@ -6,4 +6,6 @@ import com.olx.model.CategoryDtoRes;
 
 public interface ICategoryDao {
 	Set<CategoryDtoRes> findAll();
+
+	CategoryDtoRes find(String name);
 }

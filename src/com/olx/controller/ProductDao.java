@@ -133,7 +133,7 @@ public class ProductDao implements IProductDao{
 		// TODO Auto-generated method stub
 		ProductDtoRes res= new ProductDtoRes();
 		try {
-			int ret = stmt.executeUpdate("insert into product (name,price,categ_id,descreption,user_id,image,status) values( '"+product.getName()+"' , "+ product.getPrice()+" , "+ product.getCategory().getId()+" , '"+ product.getDescreption()+"' , "+ product.getUser().getId()+" , '"+ product.getImage()+"' , '"+ "'new'" +"'"+")");
+			int ret = stmt.executeUpdate("insert into product (name,price,categ_id,descreption,user_id,image,status) values( '"+product.getName()+"' , "+ product.getPrice()+" , "+ product.getCategory().getId()+" , '"+ product.getDescreption()+"' , "+ product.getUser().getId()+" , '"+ product.getImage()+"' , '"+ "new" +"'"+")");
 			if(ret==1){
 				res.setResult(true);
 			}else

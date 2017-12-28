@@ -1,199 +1,143 @@
 package com.olx.view;
 
-import java.awt.EventQueue;
+
+import java.awt.Font;
 import java.awt.Image;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.border.Border;
 
-import com.olx.controller.Datee;
+import com.olx.model.User;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 
-public class PostProduct {
+public class PostProduct extends JFrame {
 
-	JFrame frame1;
-	JLabel im;
-	
-	
-	
-	/**
-	 * Launch the application.
-	 */
-	
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					
-					
-					PostProduct window = new PostProduct();
-					window.frame1.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-
-	}
-	
-
-	/**
-	 * Create the application.
-	 */
-	
-	
-	public PostProduct() {
-	 	initialize();
-	}
-	 
-	
-	
-
-
-public PostProduct(String st) {
+	private JFrame frame1;
+	private JLabel im;
+	private JButton btnNewButton;
+	private JPanel contentPane;
+	String st;
+public PostProduct(String stt,String name, String date, double price,String category, String descreption,User user,
+		String image,String city,int phone,String address) {
 	initialize();
-	
-
-	
-
+st=stt;
     JLabel username = new JLabel(st);
 	username.setBounds(89, 7, 128, 18);
-	frame1.getContentPane().add(username);
-	
-/*
-	  UserDao userr =new UserDao();
-	   UserDtoRes u = userr.find(st);
-	  User user = u.getUser();
-	   */
-	   
-}
-
-
-public PostProduct(String name, String date, double price, String descreption,
-		String image, String status) {
-	initialize();
-	
-
-	
-	
-	JLabel lblNewLabel = new JLabel();
-	lblNewLabel.setBounds(22, 36, 46, 14);
-	frame1.getContentPane().add(lblNewLabel);
-
-	
+	contentPane.add(username);
 	
 	JLabel lblNewLabel_1 = new JLabel("Name");
 	lblNewLabel_1.setBounds(22, 36, 46, 14);
-	frame1.getContentPane().add(lblNewLabel_1);
+	contentPane.add(lblNewLabel_1);
 	
 	JLabel lblNewLabel_2 = new JLabel("Date");
-	lblNewLabel_2.setBounds(22, 61, 46, 14);
-	frame1.getContentPane().add(lblNewLabel_2);
+	lblNewLabel_2.setBounds(22, 63, 46, 14);
+	contentPane.add(lblNewLabel_2);
 	
 	JLabel lblNewLabel_3 = new JLabel("Price");
-	lblNewLabel_3.setBounds(22, 86, 46, 14);
-	frame1.getContentPane().add(lblNewLabel_3);
+	lblNewLabel_3.setBounds(22,88, 46, 14);
+	contentPane.add(lblNewLabel_3);
 	
-	
-	JLabel lblNewLabel_5 = new JLabel("Descreption");
-	lblNewLabel_5.setBounds(22, 136, 66, 14);
-	frame1.getContentPane().add(lblNewLabel_5);
-	
-	JLabel lblNewLabel_7 = new JLabel("Status");
-	lblNewLabel_7.setBounds(22, 233, 46, 14);
-	frame1.getContentPane().add(lblNewLabel_7);
-	
-	
-	
-	
+	JLabel lblNewLabel_5 = new JLabel("Category");
+	lblNewLabel_5.setBounds(22, 113, 62, 20);
+	contentPane.add(lblNewLabel_5);
 
-
-	
+	JLabel lblNewLabel_7 = new JLabel("Descreption");
+	lblNewLabel_7.setBounds(24, 266, 75, 14);
+	contentPane.add(lblNewLabel_7);
 	
 	JLabel lblNewLabel_8= new JLabel(name);
-	lblNewLabel_8.setBounds(89, 33, 128, 20);
-	frame1.getContentPane().add(lblNewLabel_8);
+	lblNewLabel_8.setBounds(109, 36, 128, 20);
+	contentPane.add(lblNewLabel_8);
 	
 	JLabel lblNewLabel_9 = new JLabel(date);
-	lblNewLabel_9.setBounds(89, 58, 128, 20);
-	frame1.getContentPane().add(lblNewLabel_9);
+	lblNewLabel_9.setBounds(109, 63, 128, 15);
+	contentPane.add(lblNewLabel_9);
 	
 	JLabel lblNewLabel_10 = new JLabel(String.valueOf(price));
-	lblNewLabel_10.setBounds(89, 83, 128, 20);
-	frame1.getContentPane().add(lblNewLabel_10);
+	lblNewLabel_10.setBounds(109, 85, 148, 20);
+	contentPane.add(lblNewLabel_10);
 	
 	
 	JLabel lblNewLabel_11 = new JLabel(descreption);
-	lblNewLabel_11.setBounds(89, 114, 128, 112);
-	frame1.getContentPane().add(lblNewLabel_11);
+	lblNewLabel_11.setVerticalAlignment(SwingConstants.TOP);
+	lblNewLabel_11.setBounds(109, 266, 424, 52);
+	contentPane.add(lblNewLabel_11);
 	
-	JLabel lblNewLabel_12 = new JLabel(status);
-	lblNewLabel_12.setBounds(89, 235, 128, 20);
-	frame1.getContentPane().add(lblNewLabel_12);
+
+	JLabel lblNewLabel_4 = new JLabel(category);
+	lblNewLabel_4.setBounds(108, 114, 109, 18);
+	contentPane.add(lblNewLabel_4);
 	
-	
-	
-	
-	
-	
-	
+	 im = new JLabel(image);
+	 im.setBounds(276, 16, 309, 216);
+	 contentPane.add(im);
+	 im.setIcon(ResizeImage(image));
+	 
+
+		JLabel lblCity = new JLabel("City");
+		lblCity.setBounds(22, 144, 46, 14);
+		contentPane.add(lblCity);
+		
+		JLabel lblCity_1 = new JLabel(city);
+		lblCity_1.setBounds(109, 143, 84, 14);
+		contentPane.add(lblCity_1);
+		
+		JLabel lblAddress = new JLabel("Address");
+		lblAddress.setBounds(22, 169, 55, 14);
+		contentPane.add(lblAddress);
+		
+		JLabel lblAddress_1 = new JLabel(address);
+		lblAddress_1.setBounds(109, 168, 84, 14);
+		contentPane.add(lblAddress_1);
+		
+		JLabel lblPhone = new JLabel("Phone");
+		lblPhone.setBounds(22, 194, 46, 14);
+		contentPane.add(lblPhone);
+		
+		JLabel lblNewLabel = new JLabel(String.valueOf(phone));
+		lblNewLabel.setBounds(109, 193, 84, 14);
+		contentPane.add(lblNewLabel);
 	   
 	
-	JButton btnNewButton = new JButton("Home");
+	btnNewButton = new JButton("Main");
 	btnNewButton.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			
-			  if (e.getSource() == btnNewButton)
-		
-
-                        JOptionPane.showMessageDialog(btnNewButton, "Data Saved Successfully");
+			try {
+				Main window = new Main(st);
+				window.setVisible(true);
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
 
                     }
-
-                
-
-    
-		
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 			
 		
 	});
 
-	btnNewButton.setBounds(99, 266, 109, 34);
-	frame1.getContentPane().add(btnNewButton);
+	btnNewButton.setBounds(470, 329, 115, 23);
+	contentPane.add(btnNewButton);
 	
-	
-	 im = new JLabel(image);
-	im.setBounds(265, 44, 240, 224);
-	frame1.getContentPane().add(im);
 
-
-
-
+	JButton btnLogout = new JButton("Logout");
+	btnLogout.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent arg0) {
+			
+			System.exit(0);
+			
+		}
+	});
+	btnLogout.setFont(new Font("Tahoma", Font.PLAIN, 17));
+	btnLogout.setBounds(10, 329, 115, 23);
+	contentPane.add(btnLogout);
 	
 	
 
@@ -208,39 +152,25 @@ public ImageIcon ResizeImage(String ImagePath)
     return image;
 }
 
-
-	/**
-	 * Initialize the contents of the frame.
-	 * @param st 
-	 */
 	 void initialize() {
-		 
-		frame1 = new JFrame();
-		frame1.setBounds(100, 100, 645, 463);
-		frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame1.getContentPane().setLayout(null);
-		
-		
+			
 
-		JLabel lblNewLabel = new JLabel();
-		lblNewLabel.setBounds(22, 11, 46, 14);
-		frame1.getContentPane().add(lblNewLabel);
+			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			setBounds(100, 100, 634, 393);
+			contentPane = new JPanel();
+
+
+		String title = "Post Product";
+		Border border = BorderFactory.createTitledBorder(title);
+		contentPane.setBorder(border);
+			
+			//contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+			setContentPane(contentPane);
+			contentPane.setLayout(null);
+			
 		
 		
 	 }
 		
-		
-		
-
-		
-		
 }
-	
-	
-
-
-
-
-
-
 
