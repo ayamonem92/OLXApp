@@ -32,7 +32,6 @@ public class Products extends JFrame {
 		// products = new HashSet<Product>();
 
 		 Set<Product>products = productService.ListOfProducts(new CategoryDtoReq(id));
-		 products=products;
 		 JScrollPane scrollPane = new JScrollPane();
 			scrollPane.setBounds(31, 26, 297, 167);
 			contentPane.add(scrollPane);

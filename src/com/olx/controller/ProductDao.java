@@ -69,10 +69,11 @@ public class ProductDao implements IProductDao{
 		ResultSet rs;
 		Set<ProductDtoRes> products = new HashSet<ProductDtoRes>();
 		try {
-			ProductDtoRes productt = new ProductDtoRes();
+			
 			
 			rs = stmt.executeQuery("select product.id,product.name,product.date,price,descreption,user.name,product.image,product.status,category.name from product,user,category where user.id=product.user_id and product.categ_id=category.id and categ_id="+category.getId());
 			while(rs.next()){
+				ProductDtoRes productt = new ProductDtoRes();
 				Product product = new Product();
 				product.setId(rs.getInt(1));
 				product.setName(rs.getString(2));
