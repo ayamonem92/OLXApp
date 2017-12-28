@@ -17,6 +17,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class Register extends JFrame {
 	private JFrame frame;
@@ -56,59 +57,66 @@ public class Register extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Name: ");
-		lblNewLabel.setBounds(20, 31, 46, 14);
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel.setBounds(20, 31, 131, 14);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Password: ");
-		lblNewLabel_1.setBounds(20, 56, 81, 14);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_1.setBounds(20, 56, 131, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Email: ");
-		lblNewLabel_2.setBounds(20, 81, 46, 14);
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_2.setBounds(20, 81, 131, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("City: ");
-		lblNewLabel_3.setBounds(20, 106, 46, 14);
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_3.setBounds(20, 106, 131, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Phone: ");
-		lblNewLabel_4.setBounds(20, 131, 46, 14);
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_4.setBounds(20, 131, 131, 14);
 		contentPane.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("Address: ");
-		lblNewLabel_5.setBounds(20, 156, 46, 14);
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblNewLabel_5.setBounds(20, 156, 131, 14);
 		contentPane.add(lblNewLabel_5);
 		
 		NameField = new JTextField();
-		NameField.setBounds(99, 28, 139, 20);
+		NameField.setBounds(161, 31, 176, 20);
 		contentPane.add(NameField);
 		NameField.setColumns(10);
 		
 		Email = new JTextField();
-		Email.setBounds(99, 78, 139, 20);
+		Email.setBounds(161, 81, 176, 20);
 		contentPane.add(Email);
 		Email.setColumns(10);
 		
 		City = new JTextField();
-		City.setBounds(99, 103, 139, 20);
+		City.setBounds(161, 106, 176, 20);
 		contentPane.add(City);
 		City.setColumns(10);
 		
 		Phone = new JTextField();
-		Phone.setBounds(99, 128, 139, 20);
+		Phone.setBounds(161, 131, 176, 20);
 		contentPane.add(Phone);
 		Phone.setColumns(10);
 		
 		Address = new JTextField();
-		Address.setBounds(99, 153, 139, 20);
+		Address.setBounds(161, 156, 176, 20);
 		contentPane.add(Address);
 		Address.setColumns(10);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(99, 53, 139, 20);
+		passwordField.setBounds(161, 56, 176, 20);
 		contentPane.add(passwordField);
 		
 		JButton btnNewButton = new JButton("Register");
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String username=NameField.getText();
@@ -129,7 +137,7 @@ public class Register extends JFrame {
 				 }
 			}
 		});
-		btnNewButton.setBounds(211, 184, 89, 23);
+		btnNewButton.setBounds(194, 223, 106, 27);
 		contentPane.add(btnNewButton);
 	}
 

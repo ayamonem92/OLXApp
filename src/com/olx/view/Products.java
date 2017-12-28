@@ -27,6 +27,7 @@ public class Products extends JFrame {
 	 * Create the frame.
 	 */
 	public Products(int  id){
+		setTitle("Products");
 		initilize();
 		ProductService productService = new ProductService();
 		// products = new HashSet<Product>();

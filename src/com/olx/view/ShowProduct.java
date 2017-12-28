@@ -13,6 +13,7 @@ import com.olx.model.Product;
 import com.olx.model.User;
 
 import javax.swing.JLabel;
+import java.awt.Font;
 
 public class ShowProduct extends JFrame {
 
@@ -31,59 +32,73 @@ public class ShowProduct extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel name = new JLabel("");
-		name.setBounds(137, 11, 148, 14);
+		name.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		name.setBounds(210, 11, 148, 14);
 		contentPane.add(name);
 		
 		JLabel lblNewLabel = new JLabel("Product Name:");
-		lblNewLabel.setBounds(10, 11, 105, 14);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel.setBounds(10, 11, 152, 14);
 		contentPane.add(lblNewLabel);
 		
 		JLabel price = new JLabel("");
-		price.setBounds(137, 36, 63, 14);
+		price.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		price.setBounds(210, 36, 63, 14);
 		contentPane.add(price);
 		
 		JLabel lblNewLabel_1 = new JLabel("Price: ");
-		lblNewLabel_1.setBounds(10, 36, 46, 14);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_1.setBounds(10, 36, 152, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel Date = new JLabel("");
-		Date.setBounds(137, 61, 118, 14);
+		Date.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		Date.setBounds(210, 61, 118, 14);
 		contentPane.add(Date);
 		
 		JLabel lblNewLabel_2 = new JLabel("Date:");
-		lblNewLabel_2.setBounds(10, 61, 46, 14);
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_2.setBounds(10, 61, 152, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblUserName = new JLabel("User name:");
-		lblUserName.setBounds(10, 86, 82, 14);
+		lblUserName.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblUserName.setBounds(10, 86, 152, 14);
 		contentPane.add(lblUserName);
 		
 		JLabel username = new JLabel("");
-		username.setBounds(137, 86, 148, 14);
+		username.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		username.setBounds(210, 86, 148, 14);
 		contentPane.add(username);
 		
 		JLabel lblCity = new JLabel("City:");
-		lblCity.setBounds(10, 111, 46, 14);
+		lblCity.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblCity.setBounds(10, 111, 152, 14);
 		contentPane.add(lblCity);
 		
 		JLabel City = new JLabel("");
-		City.setBounds(137, 111, 63, 14);
+		City.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		City.setBounds(210, 111, 118, 14);
 		contentPane.add(City);
 		
 		JLabel lblAddress = new JLabel("Address:");
-		lblAddress.setBounds(10, 136, 63, 14);
+		lblAddress.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblAddress.setBounds(10, 136, 152, 14);
 		contentPane.add(lblAddress);
 		
 		JLabel Address = new JLabel("");
-		Address.setBounds(137, 136, 184, 14);
+		Address.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		Address.setBounds(210, 136, 184, 14);
 		contentPane.add(Address);
 		
 		JLabel lblCategory = new JLabel("Category:");
-		lblCategory.setBounds(10, 161, 63, 14);
+		lblCategory.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblCategory.setBounds(10, 161, 152, 14);
 		contentPane.add(lblCategory);
 		
 		JLabel Category = new JLabel("");
-		Category.setBounds(137, 161, 118, 14);
+		Category.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		Category.setBounds(210, 161, 118, 14);
 		contentPane.add(Category);
 		ProductService proService = new ProductService();
 		Product product = proService.getProductById(id);
